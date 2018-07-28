@@ -10,7 +10,6 @@
     <projectUrl>https://github.com/mbedded/CoLib.Common</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>First publish</releaseNotes>
     <copyright>Copyright 2018</copyright>
     <tags>utility extension</tags>
   </metadata>
