@@ -1,6 +1,7 @@
-﻿using Xunit;
+﻿using CoLib.Common.Extensions;
+using Xunit;
 
-namespace CoLib.Common.Extensions.Test.Extensions {
+namespace CoLib.Common.Test.Extensions {
 
   public class StringExtensionsTest {
 
