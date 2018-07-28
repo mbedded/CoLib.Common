@@ -6,7 +6,7 @@
   public static class StringExtensions {
 
     /// <summary>
-    ///   This method tries to Trim a srtring.
+    ///   This method tries to Trim a string.
     ///   If the given parameter is null, an empty string "" will be returned.
     /// </summary>
     /// <param name="xString">The string which should be trimmed</param>
