@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>mbedded</Company>
+    <Product></Product>
+    <Authors>mbedded</Authors>
+    <PackageProjectUrl>https://github.com/mbedded/CoLib.Common</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mbedded/CoLib.Common/blob/master/LICENSE</PackageLicenseUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+  </ItemGroup>
+
+</Project>
