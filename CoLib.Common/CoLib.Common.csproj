@@ -9,14 +9,14 @@
     <owners>mbedded</owners>
     <Description>A collection of useful classes and methods which may be used in several projects.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Current release notes can be found in the [Changelog](https://github.com/mbedded/CoLib.Common/blob/master/CHANGELOG.md).</PackageReleaseNotes>
+    <PackageReleaseNotes>Current release notes can be found in changelog.md which is provided in the git-repositry (see Project URL).</PackageReleaseNotes>
     <PackageTags>extension utility</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/mbedded/CoLib.Common</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/mbedded/CoLib.Common/blob/master/LICENSE</PackageLicenseUrl>
-    <AssemblyVersion>0.2.1.0</AssemblyVersion>
-    <FileVersion>0.2.1.0</FileVersion>
-    <Version>0.2.1</Version>
+    <AssemblyVersion>0.2.2.0</AssemblyVersion>
+    <FileVersion>0.2.2.0</FileVersion>
+    <Version>0.2.2</Version>
     <Copyright>Copyright 2018</Copyright>
     <Company />
   </PropertyGroup>
