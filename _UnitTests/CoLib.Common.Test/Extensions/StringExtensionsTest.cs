@@ -1,7 +1,6 @@
-﻿using Mbedded.Utilities.Extensions;
-using Xunit;
+﻿using Xunit;
 
-namespace Mbedded.Utilities.Extensions_Test.Extensions {
+namespace CoLib.Common.Extensions.Test.Extensions {
 
   public class StringExtensionsTest {
 

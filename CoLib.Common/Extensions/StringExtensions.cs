@@ -1,5 +1,8 @@
-﻿namespace Mbedded.Utilities.Extensions {
+﻿namespace CoLib.Common.Extensions {
 
+  /// <summary>
+  ///   This class contains several methods for strings.
+  /// </summary>
   public static class StringExtensions {
 
     /// <summary>
@@ -11,6 +14,7 @@
     public static string TrimOrEmpty(this string xString) {
       return string.IsNullOrEmpty(xString) ? "" : xString.Trim();
     }
+
 
   }
 

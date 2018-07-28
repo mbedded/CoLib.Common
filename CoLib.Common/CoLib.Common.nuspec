@@ -6,8 +6,8 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/mbedded/ExtensionCollection/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/mbedded/ExtensionCollection</projectUrl>
+    <licenseUrl>https://github.com/mbedded/CoLib.Common/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mbedded/CoLib.Common</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>First publish</releaseNotes>
