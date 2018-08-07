@@ -1,13 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 
   <PropertyGroup>
-    <TargetFramework>net462</TargetFramework>
+    <TargetFrameworks>net471;net462;net452</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Company>mbedded</Company>
     <Product></Product>
     <Authors>mbedded</Authors>
     <PackageProjectUrl>https://github.com/mbedded/CoLib.Common</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/mbedded/CoLib.Common/blob/master/LICENSE</PackageLicenseUrl>
+    <Version>1.1.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

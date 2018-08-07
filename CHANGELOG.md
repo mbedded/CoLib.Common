@@ -7,6 +7,10 @@ This file contains the changes for the projects.
 
 ## CoLib.Common
 
+### 1.1.0
+
+- NEW: Support of .Net-Framework 4.5.2, 4.6.2, 4.7.1, NetStandard 2.0 and NetCore 2.0
+
 ### 0.2.1 / 0.2.2
 
 - Description for NuGet-Package updated
@@ -22,6 +26,10 @@ This file contains the changes for the projects.
 
 
 ## CoLib.Common.EF
+
+### 1.1.0
+
+- NEW: Support of .Net-Framework 4.5.2, 4.6.2 and 4.7.1
 
 ### 1.0.0
 
