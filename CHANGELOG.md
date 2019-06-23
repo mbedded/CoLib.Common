@@ -7,6 +7,11 @@ This file contains the changes for the projects.
 
 ## CoLib.Common
 
+### [Unpublished]
+
+- NEW: Icon added (#7). Will be published with next version of this Nuget-Package
+- Target Framework changed to NetStandard 2.0
+
 ### 1.1.0
 
 - NEW: Support of .Net-Framework 4.5.2, 4.6.2, 4.7.1, NetStandard 2.0 and NetCore 2.0
@@ -17,7 +22,7 @@ This file contains the changes for the projects.
 
 ### 0.2.0
 
-- NEW: Serializable Dictionary added ([#1](https://github.com/mbedded/CoLib.Common/issues/1))
+- NEW: Serializable Dictionary added (#1)
 
 ### 0.1.0
 
