@@ -7,10 +7,11 @@ This file contains the changes for the projects.
 
 ## CoLib.Common
 
-### [Unpublished]
+### 1.2.1
 
 - NEW: Icon added (#7). Will be published with next version of this Nuget-Package
 - Target Framework changed to NetStandard 2.0
+- ToBase54/FromBase64 extension added (#5)
 
 ### 1.1.0
 

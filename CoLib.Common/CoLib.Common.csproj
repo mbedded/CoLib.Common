@@ -20,6 +20,7 @@
     <Company />
     <TargetFramework>netstandard2.0</TargetFramework>
     <PackageVersion>1.2.0</PackageVersion>
+    <PackageIconUrl>https://raw.githubusercontent.com/mbedded/CoLib.Common/master/Resources/LogoNuget.png</PackageIconUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

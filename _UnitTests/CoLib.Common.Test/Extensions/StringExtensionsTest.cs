@@ -1,4 +1,5 @@
-﻿using CoLib.Common.Extensions;
+﻿using System.Text;
+using CoLib.Common.Extensions;
 using Xunit;
 
 namespace CoLib.Common.Test.Extensions {
@@ -63,6 +64,25 @@ namespace CoLib.Common.Test.Extensions {
       Assert.Equal(expected, result);
     }
 
+    [Fact]
+    public void ToBase64String_UseUTF8Encoding() {
+      var input = "Hello world!";
+      var expected = "SGVsbG8gd29ybGQh";
+
+      var result = input.ToBase64(Encoding.UTF8);
+
+      Assert.Equal(expected, result);
+    }
+
+    [Fact]
+    public void FromBase64String_UseUTF8Encoding() {
+      var input = "SGVsbG8gd29ybGQh";
+      var expected = "Hello world!";
+
+      var result = input.FromBase64(Encoding.UTF8);
+
+      Assert.Equal(expected, result);
+    }
 
   }
 
