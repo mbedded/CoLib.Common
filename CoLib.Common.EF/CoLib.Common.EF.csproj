@@ -9,6 +9,8 @@
     <PackageProjectUrl>https://github.com/mbedded/CoLib.Common</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/mbedded/CoLib.Common/blob/master/LICENSE</PackageLicenseUrl>
     <Version>1.1.0</Version>
+    <PackageVersion>1.1.1</PackageVersion>
+    <PackageIconUrl>https://raw.githubusercontent.com/mbedded/CoLib.Common/master/Resources/LogoNuget.png</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
