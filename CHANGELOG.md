@@ -2,9 +2,6 @@
 
 This file contains the changes for the projects.
 
-- [CoLib.Common](#colibcommon)
-- [CoLib.Common.EF](#colibcommonef)
-
 ## CoLib.Common
 
 ### 1.2.1
@@ -29,18 +26,3 @@ This file contains the changes for the projects.
 
 - First release
 - NEW: StringExtension.TrimOrEmpty()
-
-
-## CoLib.Common.EF
-
-### 1.1.1
-
-- NEW: Icon added (#7). Will be published with next version of this Nuget-Package 
-
-### 1.1.0
-
-- NEW: Support of .Net-Framework 4.5.2, 4.6.2 and 4.7.1
-
-### 1.0.0
-
-- NEW: DbModelBuilderExtension to use TablePrefix
