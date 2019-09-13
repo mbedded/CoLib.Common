@@ -13,19 +13,15 @@ namespace CoLib.Common.Collections {
   [Serializable]
   [XmlRoot(XML_ROOT)]
   public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IXmlSerializable {
+
     private const string XML_ROOT = "SerializableDictionary";
 
     private const string DEFAULT_TAG_ITEM = "Item";
     private const string DEFAULT_TAG_KEY = "Key";
     private const string DEFAULT_TAG_VALUE = "Value";
 
-    private static readonly XmlSerializer _keySerializer = new XmlSerializer(typeof(TKey));
-    private static readonly XmlSerializer _valueSerializer = new XmlSerializer(typeof(TValue));
-
-    /// <inheritdoc />
-    public SerializableDictionary()
-        : base() {
-    }
+    private readonly XmlSerializer _keySerializer = new XmlSerializer(typeof(TKey));
+    private readonly XmlSerializer _valueSerializer = new XmlSerializer(typeof(TValue));
 
     /// <inheritdoc />
     public XmlSchema GetSchema() {
@@ -33,19 +29,20 @@ namespace CoLib.Common.Collections {
     }
 
     /// <inheritdoc />
-    public void ReadXml(XmlReader xReader) {
-      bool isEmpty = xReader.IsEmptyElement;
+    public void ReadXml(XmlReader reader) {
+      bool isEmpty = reader.IsEmptyElement;
 
       // The header line or root-element
-      xReader.Read();
+      reader.Read();
 
       // Read again if first line was a header
-      if (xReader.NodeType == XmlNodeType.XmlDeclaration) {
-        xReader.Read();
+      if (reader.NodeType == XmlNodeType.XmlDeclaration) {
+        reader.Read();
       }
+
       // Read again if it is the root element. Otherwise the following code will cause an error
-      if (string.Equals(xReader.Name, XML_ROOT, StringComparison.Ordinal)) {
-        xReader.Read();
+      if (string.Equals(reader.Name, XML_ROOT, StringComparison.Ordinal)) {
+        reader.Read();
       }
 
 
@@ -53,64 +50,64 @@ namespace CoLib.Common.Collections {
         return;
       }
 
-      while (xReader.NodeType != XmlNodeType.EndElement) {
-        xReader.ReadStartElement(DEFAULT_TAG_ITEM);
+      while (reader.NodeType != XmlNodeType.EndElement) {
+        reader.ReadStartElement(DEFAULT_TAG_ITEM);
+
         try {
-          TKey lKey;
-          TValue lValue;
+          TKey key;
+          TValue value;
 
-          xReader.ReadStartElement(DEFAULT_TAG_KEY);
+          reader.ReadStartElement(DEFAULT_TAG_KEY);
+
           try {
-            lKey = (TKey)_keySerializer.Deserialize(xReader);
+            key = (TKey) _keySerializer.Deserialize(reader);
           } finally {
-            xReader.ReadEndElement();
+            reader.ReadEndElement();
           }
 
-          xReader.ReadStartElement(DEFAULT_TAG_VALUE);
+          reader.ReadStartElement(DEFAULT_TAG_VALUE);
+
           try {
-            lValue = (TValue)_valueSerializer.Deserialize(xReader);
+            value = (TValue) _valueSerializer.Deserialize(reader);
           } finally {
-            xReader.ReadEndElement();
+            reader.ReadEndElement();
           }
 
-          Add(lKey, lValue);
+          Add(key, value);
         } finally {
-          xReader.ReadEndElement();
+          reader.ReadEndElement();
         }
 
-        xReader.MoveToContent();
+        reader.MoveToContent();
       }
 
-      xReader.ReadEndElement();
+      reader.ReadEndElement();
     }
 
     /// <inheritdoc />
-    public void WriteXml(XmlWriter xWriter) {
+    public void WriteXml(XmlWriter writer) {
       foreach (KeyValuePair<TKey, TValue> keyValuePair in this) {
-        xWriter.WriteStartElement(DEFAULT_TAG_ITEM);
-        xWriter.WriteStartElement(DEFAULT_TAG_KEY);
+        writer.WriteStartElement(DEFAULT_TAG_ITEM);
+        writer.WriteStartElement(DEFAULT_TAG_KEY);
 
         try {
-          _keySerializer.Serialize(xWriter, keyValuePair.Key);
+          _keySerializer.Serialize(writer, keyValuePair.Key);
         } finally {
-          xWriter.WriteEndElement();
+          writer.WriteEndElement();
         }
 
-        xWriter.WriteStartElement(DEFAULT_TAG_VALUE);
+        writer.WriteStartElement(DEFAULT_TAG_VALUE);
 
         try {
-          _valueSerializer.Serialize(xWriter, keyValuePair.Value);
+          _valueSerializer.Serialize(writer, keyValuePair.Value);
         } finally {
-          xWriter.WriteEndElement();
+          writer.WriteEndElement();
         }
 
-        xWriter.WriteEndElement();
+        writer.WriteEndElement();
       }
-
     }
 
   }
-
-
 
 }

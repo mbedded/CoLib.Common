@@ -3,6 +3,10 @@ using CoLib.Common.Interfaces;
 
 namespace CoLib.Common.Generator {
 
+  /// <summary>
+  ///   This class returns random strings with default
+  ///   or given length.
+  /// </summary>
   public class TokenGenerator : ITokenGenerator {
 
     private const int DEFAULT_LENGTH = 8;
@@ -11,6 +15,9 @@ namespace CoLib.Common.Generator {
 
     private readonly Random _random;
 
+    /// <summary>
+    ///   Creates a new instance.
+    /// </summary>
     public TokenGenerator() {
       _random = new Random();
     }
