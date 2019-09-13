@@ -19,7 +19,7 @@
     <Copyright>Copyright 2018</Copyright>
     <Company />
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageVersion>1.2.1</PackageVersion>
+    <PackageVersion>2.0.0</PackageVersion>
     <PackageIconUrl>https://raw.githubusercontent.com/mbedded/CoLib.Common/master/Resources/LogoNuget.png</PackageIconUrl>
   </PropertyGroup>
 
