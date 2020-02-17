@@ -22,12 +22,12 @@ namespace CoLib.Common.Generator {
       _random = new Random();
     }
 
-    /// <inheritdoc cref="ITokenGenerator.GenerateToken()"/>
+    /// <inheritdoc cref="ITokenGenerator.GenerateToken()" />
     public string GenerateToken() {
       return GenerateToken(DEFAULT_LENGTH);
     }
 
-    /// <inheritdoc cref="ITokenGenerator.GenerateToken(int)"/>
+    /// <inheritdoc cref="ITokenGenerator.GenerateToken(int)" />
     public string GenerateToken(int length) {
       if (length <= 0) {
         throw new ArgumentException("The requested length is invalid. Length has to be 1 at least.", nameof(length));

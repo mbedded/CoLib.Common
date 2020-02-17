@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace CoLib.Common.Extensions {
 
@@ -25,7 +26,7 @@ namespace CoLib.Common.Extensions {
     /// <returns>Returns a string containing the Base64 converted result</returns>
     public static string ToBase64(this string xInput, Encoding xEncoding) {
       byte[] inputAsBytes = xEncoding.GetBytes(xInput);
-      return System.Convert.ToBase64String(inputAsBytes);
+      return Convert.ToBase64String(inputAsBytes);
     }
 
     /// <summary>
@@ -35,7 +36,7 @@ namespace CoLib.Common.Extensions {
     /// <param name="xEncoding">Encoding for transformation</param>
     /// <returns>Returns the normal string by given Base64 input</returns>
     public static string FromBase64(this string xBase64String, Encoding xEncoding) {
-      byte[] decodedAsBytes = System.Convert.FromBase64String(xBase64String);
+      byte[] decodedAsBytes = Convert.FromBase64String(xBase64String);
       return xEncoding.GetString(decodedAsBytes);
     }
 

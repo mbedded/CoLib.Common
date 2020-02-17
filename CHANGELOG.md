@@ -4,11 +4,20 @@ This file contains the changes for the projects.
 
 ## CoLib.Common
 
+### 2.1
+
+- NEW: `AppFileHandler` to manage file handling (#3)
+- Updated solution to NetStandard 2.1
+
+### 2.0
+
+- Some code cleanup (commit: 4d559da)
+
 ### 1.2.1
 
 - NEW: Icon added (#7). Will be published with next version of this Nuget-Package
 - Target Framework changed to NetStandard 2.0
-- ToBase54/FromBase64 extension added (#5)
+- ToBase64/FromBase64 extension added (#5)
 
 ### 1.1.0
 
