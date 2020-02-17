@@ -24,11 +24,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.0\CoLib.Common.Extensions.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\CoLib.Common.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\CoLib.Common.Extensions.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\CoLib.Common.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>
