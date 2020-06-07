@@ -9,6 +9,6 @@ artifacts:
 - path: '**\*.nupkg'
   name: Nuget Packages
 deploy:
-- provider: NuGet
-  api_key:
-    secure: oQiLxs4Z7o15Qi3/1XG3ObxqsuX5ofE4AFUifl8Ku4VhmYBmXu8Yg+Kj6GFgY6xA
+  - provider: NuGet
+    api_key:
+      secure: MEdG8LyfhmHM60DvLbKw9zbeUB0upzMRi9v+YUedr/E4fA3p1+dWZ5G6Y/wBmjSh
