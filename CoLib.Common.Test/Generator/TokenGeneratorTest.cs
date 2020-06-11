@@ -1,6 +1,7 @@
 using System;
 using CoLib.Common.Generator;
 using CoLib.Common.Interfaces;
+using FluentAssertions;
 using Xunit;
 
 namespace CoLib.Common.Test.Generator {
@@ -15,7 +16,7 @@ namespace CoLib.Common.Test.Generator {
     private void CreateInstance() {
       var target = GetInstance();
 
-      Assert.NotNull(target);
+      target.Should().NotBeNull();
     }
 
     [Fact]
@@ -25,8 +26,8 @@ namespace CoLib.Common.Test.Generator {
 
       var result = target.GenerateToken();
 
-      Assert.Equal(expectedLength, result.Length);
-      Assert.DoesNotContain(" ", result);
+      result.Length.Should().Be(expectedLength);
+      result.Should().NotContain(" ", "because space is no valid character");
     }
 
     [Theory]
@@ -36,7 +37,8 @@ namespace CoLib.Common.Test.Generator {
     private void GetToken_GiveInvalidLength_ExpectArgumentException(int length) {
       var target = GetInstance();
 
-      Assert.Throws<ArgumentException>(() => { target.GenerateToken(length); });
+      target.Invoking(x => x.GenerateToken(length))
+            .Should().Throw<ArgumentException>("because length must be greater than 0");
     }
 
     [Theory]
@@ -48,8 +50,8 @@ namespace CoLib.Common.Test.Generator {
 
       var result = target.GenerateToken(length);
 
-      Assert.Equal(length, result.Length);
-      Assert.DoesNotContain(" ", result);
+      result.Length.Should().Be(length);
+      result.Should().NotContain(" ", "because space is no valid character");
     }
 
   }

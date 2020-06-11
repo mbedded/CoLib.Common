@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace CoLib.Common.Extensions {
@@ -38,6 +39,52 @@ namespace CoLib.Common.Extensions {
     public static string FromBase64(this string base64String, Encoding encoding) {
       byte[] decodedAsBytes = Convert.FromBase64String(base64String);
       return encoding.GetString(decodedAsBytes);
+    }
+
+    /// <summary>
+    ///   Creates an <see cref="MD5"/> hash based on the input.
+    /// </summary>
+    /// <param name="input">The string to hash.</param>
+    /// <returns>Returns the hex-string of the calculated hash.</returns>
+    public static string ToMD5(this string input) {
+      using MD5 hash = MD5.Create();
+      return input.CreateHash(hash);
+    }
+
+    /// <summary>
+    ///   Creates an <see cref="SHA256"/> hash based on the input.
+    /// </summary>
+    /// <param name="input">The string to hash.</param>
+    /// <returns>Returns the hex-string of the calculated hash.</returns>
+    public static string ToSHA256(this string input) {
+      using SHA256 hash = SHA256.Create();
+      return input.CreateHash(hash);
+    }
+
+    /// <summary>
+    ///   Creates an <see cref="SHA512"/> hash based on the input.
+    /// </summary>
+    /// <param name="input">The string to hash.</param>
+    /// <returns>Returns the hex-string of the calculated hash.</returns>
+    public static string ToSHA512(this string input) {
+      using SHA512 hash = SHA512.Create();
+      return input.CreateHash(hash);
+    }
+
+    private static string CreateHash(this string input, HashAlgorithm algorithm) {
+      if (string.IsNullOrEmpty(input)) {
+        return string.Empty;
+      }
+
+      StringBuilder builder = new StringBuilder();
+      byte[] bytes = Encoding.UTF8.GetBytes(input);
+      byte[] res = algorithm.ComputeHash(bytes);
+
+      foreach (byte i in res) {
+        builder.Append(i.ToString("x2"));
+      }
+
+      return builder.ToString();
     }
 
   }

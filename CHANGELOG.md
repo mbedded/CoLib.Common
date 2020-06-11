@@ -4,6 +4,10 @@ This file contains the changes for the projects.
 
 ## CoLib.Common
 
+### 2.2
+
+- NEW: Extensions methods to create hashes for strings and streams (#23)
+
 ### 2.1
 
 - NEW: `AppFileHandler` to manage file handling (#3)
